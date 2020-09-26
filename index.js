@@ -23,11 +23,11 @@ try {
             newGradle = newGradle.replace(versionNameRegexPattern, `$1\"${versionName}\"`);
         fs.writeFile(gradlePath, newGradle, function (err) {
             if (err) throw err;
-            console.log('Saved!');
-            core.setOutput("result", `new version Code ${versionCode}`);
-            // Get the JSON webhook payload for the event that triggered the workflow
-            const payload = JSON.stringify(github.context.payload, undefined, 2)
-            console.log(`The event payload: ${payload}`);
+            if (versionCode.length > 0)
+                console.log(`Successfully override version code ${versionCode}`)
+            if (versionName.length > 0)
+                console.log(`Successfully override version code ${versionName}`)
+            core.setOutput("result", `Done`);
         });
     });
 
