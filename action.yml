@@ -1,0 +1,19 @@
+name: "Increment the version code of your project"
+description: "This action will increment the version code directly in build.gradle . "
+inputs:
+  gradlePath:
+    description: "Gradle path to override version"
+    required: true
+    default: "app/build.gradle"
+  versionCode:
+    description: "The new version code"
+    required: false
+  versionName:
+    description: "The new version name"
+    required: false
+outputs:
+  result: # id of output
+    description: "Action Result"
+runs:
+  using: "node12"
+  main: "index.js"
