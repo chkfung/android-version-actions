@@ -30,7 +30,7 @@ jobs:
       - name: Bump version
         uses: chkfung/android-version-actions@v1.1
         with:
-          gradlePath: app/build.gradle
+          gradlePath: app/build.gradle # or app/build.gradle.kts 
           versionCode: ${{github.run_number}}
           versionName: 1.0.0
 ```
