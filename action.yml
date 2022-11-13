@@ -15,7 +15,7 @@ outputs:
   result: # id of output
     description: "Action Result"
 runs:
-  using: "node12"
+  using: "node16"
   main: "index.js"
 branding:
   color: 'blue'
