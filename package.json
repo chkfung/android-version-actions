@@ -1,16 +1,18 @@
 {
   "name": "android-version-action",
-  "version": "1.0.0",
+  "version": "1.2.2",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build index.js -o dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@actions/core": "^1.2.6",
-    "@actions/github": "^4.0.0"
+    "@actions/github": "^4.0.0",
+    "@vercel/ncc": "^0.38.1"
   }
 }
