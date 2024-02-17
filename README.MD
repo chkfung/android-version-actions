@@ -1,4 +1,4 @@
-# android-version-action v1.2.1
+# android-version-action v1.2.2
 Override your android version number and version code through github actions
 
 ## Features
@@ -22,13 +22,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - name: set up JDK 1.8
-        uses: actions/setup-java@v1
+      - uses: actions/checkout@v4
+      - name: set up JDK 1.11
+        uses: actions/setup-java@v4
         with:
-          java-version: 1.8
+          distribution: 'temurin'
+          java-version: 11.0.22+7
       - name: Bump version
-        uses: chkfung/android-version-actions@v1.2.1
+        uses: chkfung/android-version-actions@v1.2.2
         with:
           gradlePath: app/build.gradle # or app/build.gradle.kts 
           versionCode: ${{github.run_number}}
