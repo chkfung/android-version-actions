@@ -34,3 +34,4 @@ jobs:
         title: Automated build
         body: This is an automated build.
         branch: ${{ env.BRANCH_NAME }}
+        base: master
