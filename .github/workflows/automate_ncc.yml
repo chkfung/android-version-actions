@@ -24,7 +24,7 @@ jobs:
         BRANCH_NAME=automated-build-$(date +'%Y%m%d%H%M%S')
         git checkout -b $BRANCH_NAME
         git add dist/index.js
-        git commit -m "Automated build"
+        git diff --quiet && git diff --staged --quiet || git commit -m "Automated build"
         git push origin $BRANCH_NAME
         echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
 
