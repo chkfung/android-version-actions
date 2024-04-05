@@ -27,11 +27,3 @@ jobs:
         git commit -m "Automated build"
         git push origin $BRANCH_NAME
         echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
-
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v6
-      with:
-        title: Automated build
-        body: This is an automated build.
-        branch: ${{ env.BRANCH_NAME }}
-        base: master
